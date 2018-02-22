@@ -24,16 +24,16 @@ void loop()
   // check if the pushbutton is pressed. If it is, the buttonState is HIGH:
   if (buttonState == HIGH)
   {
-    //Serial.println("Up");
-    Serial.write(1);
-    Serial.flush();
+    Serial.println("1");
+    //Serial.write(1);
+    //Serial.flush();
     delay(20);
   }
   else
   {
-    //Serial.println("Down");
-    Serial.write(2);
-    Serial.flush();
+    Serial.println("0");
+    //Serial.write(2);
+    //Serial.flush();
     delay(20);
 
   }

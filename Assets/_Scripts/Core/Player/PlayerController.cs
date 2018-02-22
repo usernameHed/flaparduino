@@ -17,6 +17,9 @@ public class PlayerController : MonoBehaviour, IKillable
     [FoldoutGroup("GamePlay"), Tooltip("liens du levelManager"), SerializeField]
     private float jumpForceDown = 1f;
 
+    [FoldoutGroup("Objects"), Tooltip("liens du levelManager"), SerializeField]
+    private ArduinoInput arduino;
+
     private float horiz = 0;
     private float verti = 0;
     private bool jump = false;
@@ -55,7 +58,8 @@ public class PlayerController : MonoBehaviour, IKillable
     /// </summary>
     private void InputPlayer()
     {
-        jump = PlayerConnected.GetSingleton.getPlayer(idPlayer).GetButtonDown("FireA");
+        //jump = PlayerConnected.GetSingleton.getPlayer(idPlayer).GetButtonDown("FireA");
+        jump = arduino.Jump;
     }
 
     /// <summary>
@@ -63,7 +67,7 @@ public class PlayerController : MonoBehaviour, IKillable
     /// </summary>
     private void MovePlayer()
     {
-        playerBody.MovePosition(transform.position + transform.forward * speed * Time.deltaTime);
+        //playerBody.MovePosition(transform.position + transform.forward * speed * Time.deltaTime);
         playerBody.AddForce(Vector3.up * -jumpForceDown, ForceMode.Acceleration);
         //playerBody.AddForce();
 
