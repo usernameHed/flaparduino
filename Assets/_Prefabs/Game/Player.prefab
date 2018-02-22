@@ -126,9 +126,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6579e403431fb39448251eb4ebccf558, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.2
+  speed: 4
   jumpForce: 2
-  jumpForceDown: 1
+  jumpForceDown: 3
   idPlayer: 0
 --- !u!114 &114834444229016214
 MonoBehaviour:

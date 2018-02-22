@@ -69,8 +69,10 @@ public class PlayerController : MonoBehaviour, IKillable
 
         if (jump)
         {
+			playerBody.velocity = Vector3.zero;
             playerBody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             jump = false;
+
         }
     }
 
