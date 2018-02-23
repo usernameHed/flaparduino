@@ -20,6 +20,9 @@ public class PlayerController : MonoBehaviour, IKillable
     [FoldoutGroup("Objects"), Tooltip("liens du levelManager"), SerializeField]
     private ArduinoInput arduino;
 
+    [FoldoutGroup("Objects"), Tooltip("liens du levelManager"), SerializeField]
+    private TimeWithNoEffect TWNE;
+
     private float horiz = 0;
     private float verti = 0;
     private bool jump = false;
@@ -67,15 +70,23 @@ public class PlayerController : MonoBehaviour, IKillable
     /// </summary>
     private void MovePlayer()
     {
+        
         //playerBody.MovePosition(transform.position + transform.forward * speed * Time.deltaTime);
         playerBody.AddForce(Vector3.up * -jumpForceDown, ForceMode.Acceleration);
         //playerBody.AddForce();
 
         if (jump)
         {
-			playerBody.velocity = Vector3.zero;
+            
+            playerBody.velocity = Vector3.zero;
             playerBody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             jump = false;
+
+
+            if (!TWNE.isOk)
+                return;
+            TWNE.isOk = false;
+            SoundManager.GetSingleton.playSound("");
 
         }
     }
