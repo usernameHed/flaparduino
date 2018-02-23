@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour, IKillable
     private void InputPlayer()
     {
         //jump = PlayerConnected.GetSingleton.getPlayer(idPlayer).GetButtonDown("FireA");
-        jump = arduino.Jump;
+        jump = (arduino.Jump == idPlayer + 1);
     }
 
     /// <summary>

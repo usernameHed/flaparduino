@@ -10,7 +10,7 @@ public class ArduinoInput : MonoBehaviour
     SerialPort sp = new SerialPort("COM6", 9600);
 
     private int jump = -1;
-    public bool Jump { get { return (jump == 1); } }
+    public int Jump { get { return (jump); } }
     #endregion
 
     #region Initialization
