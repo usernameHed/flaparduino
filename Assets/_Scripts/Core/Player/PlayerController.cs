@@ -23,6 +23,11 @@ public class PlayerController : MonoBehaviour, IKillable
     [FoldoutGroup("Objects"), Tooltip("liens du levelManager"), SerializeField]
     private TimeWithNoEffect TWNE;
 
+    [FoldoutGroup("Objects"), Tooltip("liens du levelManager"), SerializeField]
+    private Animator anim;
+
+
+
     private float horiz = 0;
     private float verti = 0;
     private bool jump = false;
@@ -86,8 +91,8 @@ public class PlayerController : MonoBehaviour, IKillable
             if (!TWNE.isOk)
                 return;
             TWNE.isOk = false;
-            SoundManager.GetSingleton.playSound("");
-
+            SoundManager.GetSingleton.playSound("Flap");
+            anim.SetBool("Jump", true);
         }
     }
 
