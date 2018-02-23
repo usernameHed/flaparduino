@@ -91,7 +91,7 @@ public class PlayerController : MonoBehaviour, IKillable
             if (!TWNE.isOk)
                 return;
             TWNE.isOk = false;
-            SoundManager.GetSingleton.playSound("Flap");
+            //SoundManager.GetSingleton.playSound("Jump" + gameObject.GetInstanceID());
             anim.SetBool("Jump", true);
         }
     }
